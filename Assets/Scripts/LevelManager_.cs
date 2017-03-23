@@ -1,10 +1,8 @@
-﻿// agora precisa mudar todo o controle dos bushs para um script e usar o bg para criar o paralax 
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager_ : MonoBehaviour {
 
 	public PlayerController _player;
 	public GameObject _hidrante;
