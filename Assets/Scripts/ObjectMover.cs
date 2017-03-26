@@ -12,6 +12,7 @@ public class ObjectMover : MonoBehaviour
     public Camera _camera;
     public string objTag;
     public float spawnHeight;
+    public float spawnWidth;
     public float objDistance;
     public float objSpeed;
 
@@ -32,7 +33,7 @@ public class ObjectMover : MonoBehaviour
     {
         if (lstObjInstance.Count < maxObjCount)
         {
-            instancedObj = Instantiate(_objToMove, new Vector3(objDistance, spawnHeight, 0), transform.rotation);
+            instancedObj = Instantiate(_objToMove, new Vector3(spawnWidth, spawnHeight, 0), transform.rotation);
 
 
             var objectsWithTag = GameObject.FindGameObjectsWithTag(objTag);
@@ -43,9 +44,9 @@ public class ObjectMover : MonoBehaviour
                 Debug.Log("Distance" + Vector3.Distance(obj.transform.position, instancedObj.transform.position));
                 Debug.Log("Bounds" + _objToMove.GetComponent<Renderer>().bounds.size.x + " / " + _objToMove.GetComponent<Renderer>().bounds.size.y);
 
-                if (Vector3.Distance(obj.transform.position, instancedObj.transform.position) <= instancedObj.GetComponent<Renderer>().bounds.size.x + 5f)
+                if (Vector3.Distance(obj.transform.position, instancedObj.transform.position) <= instancedObj.GetComponent<Renderer>().bounds.size.x + objDistance)
                 {
-                    instancedObj.transform.position = new Vector3(instancedObj.transform.position.x + 10f , instancedObj.transform.position.y, instancedObj.transform.position.z);
+                    instancedObj.transform.position = new Vector3(instancedObj.transform.position.x + (spawnWidth + 2f) , instancedObj.transform.position.y, instancedObj.transform.position.z);
                 }
             }
 
@@ -59,7 +60,7 @@ public class ObjectMover : MonoBehaviour
             {
                 lstObjInstance.Remove(bush);
                 Destroy(bush);
-
+                return;
             }
             else
             {
