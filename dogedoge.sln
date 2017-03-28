@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogeDoge", "DogeDoge.csproj", "{637AE556-D6D1-559D-48D1-E583AF792448}"
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dogedoge", "dogedoge.csproj", "{A66FD190-2D01-6752-9898-A2C25E9DFCB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{637AE556-D6D1-559D-48D1-E583AF792448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{637AE556-D6D1-559D-48D1-E583AF792448}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{637AE556-D6D1-559D-48D1-E583AF792448}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{637AE556-D6D1-559D-48D1-E583AF792448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66FD190-2D01-6752-9898-A2C25E9DFCB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66FD190-2D01-6752-9898-A2C25E9DFCB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66FD190-2D01-6752-9898-A2C25E9DFCB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66FD190-2D01-6752-9898-A2C25E9DFCB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

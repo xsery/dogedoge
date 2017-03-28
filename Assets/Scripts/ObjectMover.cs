@@ -33,20 +33,28 @@ public class ObjectMover : MonoBehaviour
     {
         if (lstObjInstance.Count < maxObjCount)
         {
-            instancedObj = Instantiate(_objToMove, new Vector3(spawnWidth, spawnHeight, 0), transform.rotation);
+            if (lstObjInstance.Count <= 0)
+                instancedObj = Instantiate(_objToMove, new Vector3(spawnWidth, spawnHeight, 0), transform.rotation);
+            else
+            {
+                instancedObj = Instantiate(_objToMove, new Vector3(lstObjInstance[lstObjInstance.Count -1].GetComponent<Renderer>().bounds.size.x + objDistance, spawnHeight, 0), transform.rotation);
+            }
 
+            
+            Debug.Log("Instanced X" + instancedObj.transform.position.x);
+            Debug.Log("Instanced Y" +  instancedObj.transform.position.y);
+            
 
             var objectsWithTag = GameObject.FindGameObjectsWithTag(objTag);
 
             foreach (var obj in objectsWithTag)
             {
-
                 Debug.Log("Distance" + Vector3.Distance(obj.transform.position, instancedObj.transform.position));
                 Debug.Log("Bounds" + _objToMove.GetComponent<Renderer>().bounds.size.x + " / " + _objToMove.GetComponent<Renderer>().bounds.size.y);
 
                 if (Vector3.Distance(obj.transform.position, instancedObj.transform.position) <= instancedObj.GetComponent<Renderer>().bounds.size.x + objDistance)
                 {
-                    instancedObj.transform.position = new Vector3(instancedObj.transform.position.x + (spawnWidth + 2f) , instancedObj.transform.position.y, instancedObj.transform.position.z);
+                    instancedObj.transform.position = new Vector3(instancedObj.transform.position.x + (objDistance + 2f) , instancedObj.transform.position.y, instancedObj.transform.position.z);
                 }
             }
 
