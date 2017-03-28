@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetButtonDown("Jump") && grounded ){
+        //Não muda fran!
+		if((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) ) && grounded ){
 			playerRigidbody.AddForce (new Vector2(0,forceJump));
             if (slide == true)
             {

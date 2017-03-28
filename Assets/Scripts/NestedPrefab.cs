@@ -184,9 +184,9 @@ public class DefaultPrefabGeneration : IPrefabGeneration
 
             clone = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
         }
-#else
+/*#else
         prefab = Resources.Load(prefabPath) as GameObject;
-        clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+        clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;*/
 #endif
 
         return clone;
